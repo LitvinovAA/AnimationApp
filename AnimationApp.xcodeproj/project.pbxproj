@@ -15,7 +15,7 @@
 		8AAD0CF92AA870DC005EEE67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AAD0CF72AA870DC005EEE67 /* LaunchScreen.storyboard */; };
 		8AAD0D072AA87994005EEE67 /* SpringAnimation in Frameworks */ = {isa = PBXBuildFile; productRef = 8AAD0D062AA87994005EEE67 /* SpringAnimation */; };
 		8AAD0D092AA8A031005EEE67 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAD0D082AA8A031005EEE67 /* DataStore.swift */; };
-		8AAD0D0B2AA8C1EC005EEE67 /* Figure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAD0D0A2AA8C1EC005EEE67 /* Figure.swift */; };
+		8AAD0D0B2AA8C1EC005EEE67 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAD0D0A2AA8C1EC005EEE67 /* Animation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +28,7 @@
 		8AAD0CF82AA870DC005EEE67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8AAD0CFA2AA870DC005EEE67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AAD0D082AA8A031005EEE67 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
-		8AAD0D0A2AA8C1EC005EEE67 /* Figure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Figure.swift; sourceTree = "<group>"; };
+		8AAD0D0A2AA8C1EC005EEE67 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +110,7 @@
 		8AAD0D042AA872D2005EEE67 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8AAD0D0A2AA8C1EC005EEE67 /* Figure.swift */,
+				8AAD0D0A2AA8C1EC005EEE67 /* Animation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -195,7 +195,7 @@
 				8AAD0CF12AA870DA005EEE67 /* ViewController.swift in Sources */,
 				8AAD0D092AA8A031005EEE67 /* DataStore.swift in Sources */,
 				8AAD0CED2AA870DA005EEE67 /* AppDelegate.swift in Sources */,
-				8AAD0D0B2AA8C1EC005EEE67 /* Figure.swift in Sources */,
+				8AAD0D0B2AA8C1EC005EEE67 /* Animation.swift in Sources */,
 				8AAD0CEF2AA870DA005EEE67 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

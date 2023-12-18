@@ -9,49 +9,38 @@ import UIKit
 import SpringAnimation
 
 final class ViewController: UIViewController {
-
-    @IBOutlet var presetLabel: UILabel!
-    @IBOutlet var curveLabel: UILabel!
-    @IBOutlet var forceLabel: UILabel!
-    @IBOutlet var durationLabel: UILabel!
-    @IBOutlet var delayLabel: UILabel!
     
+    // MARK: - IB Outlets
     @IBOutlet var springAnimationView: SpringView!
-    @IBOutlet var runButton: SpringButton!
-    
-    private var figureNext = Figure.getFigure()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupLabels(with: figureNext)
+    @IBOutlet var animationLabel: SpringLabel! {
+        didSet {
+            animationLabel.text = animation.description
+        }
     }
-
-
-    @IBAction func runSpringAnimation(_ sender: SpringButton) {
+    
+    // MARK: - Private properties
+    private var animation = Animation.randomAnimation
+    
+    // MARK: - IB Actions
+    @IBAction func animationButtonPressed(_ sender: UIButton) {
+        animationLabel.animation = "zoomOut"
+        animationLabel.x = 50
+        animationLabel.animate()
+        animationLabel.text = animation.description
         
-        setupLabels(with: figureNext)
-        springAnimationView.configure(with: figureNext)
+        animationLabel.animateNext { [unowned self] in
+            animationLabel.animation = "zoomIn"
+            animationLabel.animate()
+        }
+        
+        springAnimationView.animation = animation.name
+        springAnimationView.curve = animation.curve
+        springAnimationView.duration = animation.duration
+        springAnimationView.force = animation.force
+        springAnimationView.delay = animation.delay
         springAnimationView.animate()
-            
-        figureNext = Figure.getFigure()
-        runButton.setTitle("Run \(figureNext.animation)", for: .normal)
-    }
-    
-    private func setupLabels(with figure: Figure) {
-        presetLabel.text = "preset: \(figure.animation)"
-        curveLabel.text = "curve: \(figure.curve)"
-        forceLabel.text = "force: \(String(format: "%.2f", figure.force))"
-        durationLabel.text = "duration: \(String(format: "%.2f", figure.duration))"
-        delayLabel.text = "delay: \(String(format: "%.1f", figure.delay))"
-    }
-}
-
-private extension SpringView {
-    func configure(with figure: Figure) {
-        animation = figure.animation
-        curve = figure.curve
-        force = figure.force
-        duration = figure.duration
-        delay = figure.delay
+        
+        animation = Animation.randomAnimation
+        sender.setTitle("Run \(animation.name)", for: .normal)
     }
 }
